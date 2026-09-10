@@ -38,7 +38,8 @@ function game() {
     );
     let playerScore = 0;
     let computerScore = 0;
-    while (playerScore < 3 && computerScore < 3) {
+    const MAX_ATTEMPTS = 3;
+    while (playerScore < MAX_ATTEMPTS && computerScore < MAX_ATTEMPTS) {
         const playerSelection = prompt(
             `Score — You: ${playerScore} | Computer: ${computerScore}\n\nWhat do you choose? (rock, paper or scissors)`
         );
@@ -70,7 +71,7 @@ function game() {
             alert(`${computerSelection} beats ${parsedSelection}!  \nYou Lose!🦾🦾`);
         }
     }
-    if (playerScore === 3) {
+    if (playerScore === MAX_ATTEMPTS) {
         alert("You beat the computer!🤗🤗 Congratulations!");
     } else {
         alert("The computer beat you!🤖🤖 Better luck next time!");
