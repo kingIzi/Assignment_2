@@ -18,11 +18,6 @@ function playRound(playerSelection, computerSelection) {
     return -1;
 }
 
-function parsePlayerSelection(playerSelection) {
-    if (playerSelection === null) return null;
-    return playerSelection.trim().toLowerCase();
-}
-
 function game() {
     alert(
         "Welcome to Rock Paper Scissors! 🪨📄✂️\n\n" +
@@ -43,7 +38,7 @@ function game() {
         const playerSelection = prompt(
             `Score — You: ${playerScore} | Computer: ${computerScore}\n\nWhat do you choose? (rock, paper or scissors)`
         );
-        const parsedSelection = parsePlayerSelection(playerSelection);
+        const parsedSelection = playerSelection?.trim().toLowerCase();
         if (parsedSelection === null) {
             alert("Game cancelled. Thanks for playing! 👋");
             return;
